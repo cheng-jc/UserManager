@@ -45,6 +45,13 @@ public class LoginDealwithServlet extends HttpServlet {
                 user.setName(username);
                 user.setPwd(password);
                 request.setAttribute("userobj",user);
+                String nums = (String) this.getServletContext().getAttribute("nums");
+
+                    Integer numsTemp = Integer.parseInt(this.getServletContext().getAttribute("nums").toString());
+                    nums = (numsTemp+1)+"";
+                    this.getServletContext().setAttribute("nums",nums);
+
+
                 request.getRequestDispatcher("/MainFrame").forward(request,response);
 //                System.out.println("连上数据库了");
 //                response.sendRedirect("/UserManager/MainFrame");
