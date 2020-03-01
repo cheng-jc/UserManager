@@ -18,8 +18,10 @@ public class MainFrame extends HttpServlet {
         String url = request.getHeader("Referer");
         if(url!=null){
         User user = (User) request.getAttribute("userobj");
+        String nums = this.getServletContext().getAttribute("nums").toString();
         out.println("<img src='img/bird.jpg' width=400px height=200px/>");
         out.println("欢迎 "+" "+user.getName()+" "+" 登陆<hr/>");
+        out.println("你是第 "+nums+" 个访问者<hr/>");
         out.println("<h1>管理页面</h1>");
         out.println("</br><a href='/UserManager/LoginServlet'>重新返回登录页面</a></br>");
         out.println("<h3>请选择要进行的操作</h3>");
