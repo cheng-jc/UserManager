@@ -38,6 +38,7 @@
     <servlet>
         <servlet-name>Servlet</servlet-name>
         <servlet-class>com.cjc.session.Servlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
         <servlet-name>Servlet</servlet-name>
